@@ -25,7 +25,7 @@ public class ErrorWriterSynchronized {
     }
 
     public String toString(){
-        return "ErrorWriter with " + name + " created at " + timestamp;
+        return "ErrorWriterSynchronized with " + name + " created at " + timestamp;
     }
 
     public static void main(String[] args){
