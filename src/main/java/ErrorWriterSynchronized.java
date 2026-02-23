@@ -1,16 +1,8 @@
-public class ErrorWriterSynchronized {
+public class ErrorWriterSynchronized extends ErrorWriter{
     private static ErrorWriterSynchronized uniqueInstance = null;
-    private String name;
-    private long timestamp;
 
     private ErrorWriterSynchronized(String name){
-        this.name = name;
-        this.timestamp = System.nanoTime();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException iExp){
-            
-        }
+        super(name);
     };
 
     public static synchronized ErrorWriterSynchronized getInstance(String name){
@@ -18,14 +10,6 @@ public class ErrorWriterSynchronized {
             uniqueInstance = new ErrorWriterSynchronized(name);
         }
         return uniqueInstance;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public String toString(){
-        return "ErrorWriterSynchronized with " + name + " created at " + timestamp;
     }
 
     public static void main(String[] args){

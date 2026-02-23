@@ -1,8 +1,7 @@
 public class StartUp {
 
     public static void main(String[] args){
-        ErrorWriter errorWriter = ErrorWriter.getInstance("StartUp");
-        ErrorWriterSynchronized errorWriterSynchronized = ErrorWriterSynchronized.getInstance("StartUp");
+        ErrorWriterSingleton errorWriterSingleton = ErrorWriterSingleton.getInstance("StartUp");
         ClassA.main(args);
         ClassB.main(args);
     }

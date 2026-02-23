@@ -1,11 +1,14 @@
 public class ClassA implements Runnable{
 
+    WriterFactory writerFactory = new WriterFactory();
+
     @Override
     public void run() {
-        ErrorWriter errorWriter = ErrorWriter.getInstance("ClassA");
-        System.out.println(errorWriter);
-        ErrorWriterSynchronized errorWriterSynchronized = ErrorWriterSynchronized.getInstance("ClassA");
-        System.out.println(errorWriterSynchronized);
+        ErrorWriter errorWriter = null;
+        for (Writer writer : Writer.values()){
+            errorWriter = writerFactory.getWriter(getClass().getName(), writer);
+            System.out.println(errorWriter);
+        }
     }
 
     public static void main(String[] args){
