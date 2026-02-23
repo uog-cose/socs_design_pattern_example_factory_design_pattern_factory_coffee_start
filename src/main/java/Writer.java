@@ -1,5 +1,5 @@
 public enum Writer {
-    MULTIPLE,
-    SINGLETON,
-    SYNCHRONIZED;
+    //MULTIPLE,
+    //SINGLETON,
+    //SYNCHRONIZED;
 }
